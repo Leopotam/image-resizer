@@ -49,7 +49,7 @@ func main() {
 	imaging.AutoOrientation(true)
 
 	// unwrap for ioutil.ReadDir() - no need to sort files.
-	srcDirFile, err := os.Open(dstDir)
+	srcDirFile, err := os.Open(srcDir)
 	if err != nil {
 		log.Fatal(err)
 	}
