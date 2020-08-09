@@ -21,13 +21,13 @@ GOOS=linux go build -ldflags="-s -w"
 Run binary without parameters to find usage.
 
 ## Scale
--scale <1-99> - scale in percent for new images. Required parameter, no default value.
+-scale=<1-99> - scale in percent for new images. Required parameter, no default value.
 
 ## Source folder
--src <path> - set source folder for processing. Current folder by default.
+-src="path" - set source folder for processing. Current folder by default.
 
 ## Destination folder
--dst <path> - set destination folder for processing. Source folder by default.
+-dst="path" - set destination folder for processing. Source folder by default.
 
 # License
 The software released under the terms of the [MIT license](./LICENSE.md). Enjoy.
