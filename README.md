@@ -1,6 +1,22 @@
 # Batch image resizer
 Simple batch image resizer powered by Go.
 
+# Compilation
+Go >=1.14 should be installed and ready to compile.
+
+## For windows
+```
+GOOS=windows go build -ldflags="-s -w"
+```
+## For macos
+```
+GOOS=darwin go build -ldflags="-s -w"
+```
+## For linux
+```
+GOOS=linux go build -ldflags="-s -w"
+```
+
 # Usage
 Run binary without parameters to find usage.
 
