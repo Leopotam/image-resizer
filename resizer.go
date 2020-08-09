@@ -13,6 +13,7 @@ import (
 	"os"
 	"path"
 	"sync"
+	"time"
 
 	"github.com/disintegration/imaging"
 )
@@ -37,6 +38,16 @@ func main() {
 	if len(dstDir) == 0 {
 		dstDir = srcDir
 	}
+
+	// save start time.
+	var startTime time.Time
+	if verbose {
+		startTime = time.Now()
+	}
+
+	// init resizer library.
+	imaging.AutoOrientation(true)
+
 	// unwrap for ioutil.ReadDir() - no need to sort files.
 	srcDirFile, err := os.Open(dstDir)
 	if err != nil {
@@ -59,6 +70,10 @@ func main() {
 		}
 	}
 	wg.Wait()
+	// print elapsed time.
+	if verbose {
+		fmt.Printf("elapsed time: %v\n", time.Since(startTime))
+	}
 }
 
 func processFile(wg *sync.WaitGroup, fileName, srcPath, dstPath string, scale int, verbose bool) {
